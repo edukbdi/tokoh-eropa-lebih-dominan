@@ -1,0 +1,1197 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ilmu Pengetahuan Bukan Milik Eropa | KBDI</title>
+  <meta name="description" content="Mengapa buku sejarah kita penuh nama Eropa? Kolonialisme pengetahuan dan ilmuwan-ilmuwan yang sengaja dilupakan." />
+  <link rel="icon" href="https://edukbdi.github.io/logo_KBDI/kbdi_trans.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0d0a07; --bg2: #141008; --surface: #201a12; --surface2: #2a2218;
+      --border: rgba(201,148,58,0.18); --border2: rgba(126,184,201,0.14);
+      --gold: #c9943a; --gold2: #e8b96a; --lapis: #7eb8c9; --lapis2: #a8d4e2;
+      --text: #e8dfc8; --text-muted: #a89878; --text-dim: #6a5a40;
+      --font-display: 'Cinzel', serif;
+      --font-serif: 'Playfair Display', serif;
+      --font-body: 'Source Serif 4', serif;
+      --font-ui: 'DM Sans', sans-serif;
+      --radius: 4px; --radius-lg: 8px; --max-w: 780px;
+    }
+
+    html.light {
+      --bg: #f5f0e8; --bg2: #ede5d5; --surface: #ddd4be; --surface2: #d4c9b0;
+      --border: rgba(140,90,20,0.22); --border2: rgba(40,100,130,0.16);
+      --gold: #8a5a10; --gold2: #a07020; --lapis: #2a6a88; --lapis2: #1a5070;
+      --text: #1a1408; --text-muted: #5a4830; --text-dim: #9a8868;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      font-size: 18px;
+      line-height: 1.8;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      min-height: 88vh;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+      background: #080503;
+    }
+
+    .hero-bg {
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 70% 40%, rgba(80,50,10,0.35) 0%, transparent 60%),
+                  linear-gradient(170deg, #0a0705 0%, #050302 50%, #080510 100%);
+    }
+
+    .hero-astrolabe {
+      position: absolute;
+      right: clamp(-40px,-3vw,0px);
+      top: 50%; transform: translateY(-50%);
+      width: clamp(200px,42vw,520px);
+      opacity: 0.38; pointer-events: none; z-index: 2;
+    }
+
+    html.light .hero-astrolabe { opacity: 0.18; }
+
+    .hero-astrolabe svg { width: 100%; height: auto; }
+
+    .astr-outer { animation: astrRot 38s linear infinite;         transform-origin: 200px 200px; }
+    .astr-mid   { animation: astrRot 24s linear infinite reverse; transform-origin: 200px 200px; }
+    .astr-inner { animation: astrRot 16s linear infinite;         transform-origin: 200px 200px; }
+    .astr-rete  { animation: astrRot 60s linear infinite reverse; transform-origin: 200px 200px; }
+    .astr-alid  { animation: astrAlid 18s ease-in-out infinite;   transform-origin: 200px 200px; }
+
+    @keyframes astrRot  { to { transform: rotate(360deg); } }
+    @keyframes astrAlid { 0%,100% { transform: rotate(-30deg); } 50% { transform: rotate(40deg); } }
+
+    .hero-content {
+      position: relative; z-index: 3;
+      padding: clamp(40px,8vw,80px) clamp(20px,6vw,80px) clamp(50px,8vw,80px);
+      max-width: 860px;
+      animation: fadeUp 1s ease both;
+    }
+
+    @keyframes fadeUp { from { opacity:0; transform: translateY(28px); } to { opacity:1; transform: translateY(0); } }
+
+    .hero-category {
+      display: flex; align-items: center; gap: 12px;
+      margin-bottom: 16px;
+      font-family: var(--font-ui); font-size: 11px; font-weight: 600;
+      letter-spacing: .18em; text-transform: uppercase; color: var(--gold);
+    }
+
+    .hero-category-line { width: 36px; height: 2px; background: var(--gold); flex-shrink: 0; }
+
+    .hero-title { font-family: var(--font-display); line-height: .92; margin-bottom: 24px; }
+    .hero-title .line1 { display: block; font-size: clamp(44px,8vw,100px); color: #e8dfc8; letter-spacing: .01em; }
+    .hero-title .line2 { display: block; font-size: clamp(52px,9.5vw,120px); color: var(--gold); letter-spacing: .01em; }
+    .hero-title .line3 { display: block; font-size: clamp(38px,7vw,90px); color: #7eb8c9; letter-spacing: .01em; }
+
+    .hero-sub {
+      font-family: var(--font-body); font-style: italic;
+      font-size: clamp(15px,2vw,19px); color: rgba(232,223,200,.7);
+      line-height: 1.7; max-width: 540px; margin-bottom: 32px;
+    }
+
+    .hero-meta {
+      display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+      font-family: var(--font-ui); font-size: 12px; color: rgba(232,223,200,.4);
+    }
+
+    .hero-meta-pill {
+      padding: 5px 14px; border: 1px solid; border-radius: 20px;
+      font-size: 11px; font-weight: 500; letter-spacing: .04em;
+    }
+
+    .hero-meta-pill.gold  { border-color: rgba(201,148,58,.5); color: var(--gold); }
+    .hero-meta-pill.lapis { border-color: rgba(126,184,201,.4); color: #7eb8c9; }
+
+    /* ── STAT BAND ── */
+    .stat-band {
+      background: var(--surface);
+      border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+      padding: 2.2rem 5%;
+    }
+
+    .stat-grid {
+      display: grid; grid-template-columns: repeat(auto-fit,minmax(150px,1fr));
+      gap: 2rem; max-width: 1000px; margin: 0 auto;
+    }
+
+    .stat-item { text-align: center; }
+
+    .stat-number {
+      font-family: var(--font-display);
+      font-size: clamp(28px,5vw,46px);
+      color: var(--gold); line-height: 1; display: block;
+    }
+
+    .stat-label {
+      font-size: 12px; color: var(--text-dim);
+      letter-spacing: .06em; text-transform: uppercase;
+      margin-top: 6px; line-height: 1.5;
+      font-family: var(--font-ui);
+    }
+
+    /* ── ARTICLE WRAP ── */
+    .article-wrap { max-width: var(--max-w); margin: 0 auto; padding: 0 clamp(16px,5vw,40px); }
+    .section { padding: clamp(36px,6vw,60px) 0 0; }
+
+    /* ── SECTION HEADING ── */
+    .section-num {
+      font-family: var(--font-ui); font-size: 11px; font-weight: 600;
+      letter-spacing: .2em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(22px,3.5vw,32px);
+      font-weight: 700; line-height: 1.2;
+      color: var(--text); margin-bottom: 24px;
+    }
+
+    /* ── PROSE ── */
+    .prose p { margin-bottom: 22px; font-size: clamp(16px,2vw,18px); line-height: 1.85; }
+    .prose p:last-child { margin-bottom: 0; }
+    .prose strong { font-weight: 600; }
+    .prose em { font-style: italic; color: var(--text-muted); }
+
+    /* ── PULL QUOTE ── */
+    .pull-quote {
+      margin: 40px -16px; padding: 26px 34px;
+      border-top: 2px solid var(--gold); border-bottom: 1px solid var(--border);
+      font-family: var(--font-serif); font-style: italic;
+      font-size: clamp(17px,2.5vw,22px); color: var(--text); line-height: 1.6;
+      position: relative;
+    }
+
+    .pull-quote::before {
+      content: '\201C'; position: absolute; top: -16px; left: 26px;
+      font-size: 68px; color: var(--gold); line-height: 1;
+      font-family: var(--font-serif); opacity: .35;
+    }
+
+    .pull-quote cite {
+      display: block; font-family: var(--font-ui); font-size: 13px;
+      color: var(--text-dim); margin-top: 12px; font-style: normal;
+      letter-spacing: .04em;
+    }
+
+    /* ── GIRIH DIVIDER ── */
+    .section-divider { margin: 56px 0 48px; display: flex; align-items: center; gap: 14px; }
+    .sdiv-line { flex: 1; height: 1px; background: linear-gradient(90deg, var(--gold), var(--border), transparent); }
+    .sdiv-line.rev { background: linear-gradient(270deg, var(--gold), var(--border), transparent); }
+    .sdiv-gem { display: flex; align-items: center; gap: 5px; padding: 7px 14px; border: 1px solid rgba(201,148,58,.3); border-radius: 3px; }
+    .sdiv-gem svg { width: 24px; height: 24px; }
+    .girih-spin { animation: girihSpin 12s linear infinite; transform-origin: 12px 12px; }
+    .girih-spin-rev { animation: girihSpin 18s linear infinite reverse; transform-origin: 12px 12px; }
+    @keyframes girihSpin { to { transform: rotate(360deg); } }
+
+    /* ── NOTE BOX ── */
+    .note-box {
+      margin: 32px 0; padding: 20px 24px;
+      background: rgba(201,148,58,0.07); border: 1.5px solid rgba(201,148,58,0.4);
+      border-radius: var(--radius-lg); font-family: var(--font-ui);
+      font-size: 14px; color: var(--text-muted); line-height: 1.75;
+      position: relative; overflow: hidden;
+    }
+
+    .note-box::before {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(201,148,58,0.06), transparent 55%);
+      pointer-events: none;
+    }
+
+    .note-box-label {
+      display: flex; align-items: center; gap: 10px;
+      font-size: 12px; font-weight: 700; letter-spacing: .16em;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 12px;
+    }
+
+    .note-box-label::after { content: ''; flex: 1; height: 1px; background: rgba(201,148,58,.3); }
+
+    /* ── HIGHLIGHT BOX ── */
+    .highlight-box {
+      margin: 32px 0; padding: 22px 26px;
+      background: var(--surface); border: 1px solid var(--border);
+      border-top: 3px solid var(--gold); border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+    }
+
+    .highlight-box h4 {
+      font-family: var(--font-ui); font-size: 11px; font-weight: 700;
+      letter-spacing: .16em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 14px;
+    }
+
+    .highlight-box ul { list-style: none; padding: 0; }
+
+    .highlight-box ul li {
+      font-family: var(--font-body); font-size: clamp(14px,1.8vw,16px);
+      font-weight: 300; color: var(--text-muted);
+      padding: 10px 0 10px 22px; position: relative;
+      line-height: 1.7; border-bottom: 1px solid var(--border);
+    }
+
+    .highlight-box ul li:last-child { border-bottom: none; }
+
+    .highlight-box ul li::before {
+      content: '◆'; position: absolute; left: 0; top: 13px;
+      color: var(--gold); font-size: 8px;
+    }
+
+    /* ── SCHOLAR CARDS ── */
+    .scholar-grid {
+      display: grid; grid-template-columns: repeat(auto-fill,minmax(240px,1fr));
+      gap: 14px; margin: 32px 0;
+    }
+
+    .scholar-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 22px 20px;
+      position: relative; overflow: hidden;
+      transition: border-color .25s, transform .25s;
+      opacity: 0; transform: translateY(14px);
+    }
+
+    .scholar-card.visible {
+      opacity: 1; transform: translateY(0);
+      transition: opacity .5s, transform .5s, border-color .25s;
+    }
+
+    .scholar-card:hover { border-color: var(--gold); transform: translateY(-3px); }
+
+    .scholar-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, var(--gold), transparent);
+    }
+
+    .scholar-icon { font-size: 28px; margin-bottom: 12px; display: block; }
+    .scholar-era { font-family: var(--font-ui); font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); margin-bottom: 5px; }
+    .scholar-name { font-family: var(--font-display); font-size: clamp(16px,2vw,19px); font-weight: 700; color: var(--text); margin-bottom: 4px; line-height: 1.2; }
+    .scholar-origin { font-family: var(--font-ui); font-size: 12px; color: var(--lapis); margin-bottom: 10px; }
+    .scholar-contrib { font-family: var(--font-body); font-size: clamp(13px,1.6vw,15px); font-weight: 300; color: var(--text-muted); line-height: 1.7; }
+
+    /* ── TIMELINE ── */
+    .timeline { margin: 32px 0; position: relative; padding-left: 28px; }
+    .timeline::before { content: ''; position: absolute; left: 7px; top: 0; bottom: 0; width: 1px; background: linear-gradient(to bottom, var(--gold), transparent); }
+
+    .timeline-item { position: relative; margin-bottom: 24px; opacity: 0; transform: translateX(-10px); }
+    .timeline-item.visible { opacity: 1; transform: translateX(0); transition: opacity .5s, transform .5s; }
+    .timeline-item::before { content: ''; position: absolute; left: -21px; top: 6px; width: 9px; height: 9px; border-radius: 50%; background: var(--gold); border: 2px solid var(--bg); }
+
+    .timeline-period { font-family: var(--font-display); font-size: 13px; font-weight: 600; color: var(--gold); letter-spacing: .06em; margin-bottom: 3px; }
+    .timeline-event { font-family: var(--font-body); font-size: clamp(14px,1.8vw,16px); font-weight: 300; color: var(--text-muted); line-height: 1.7; }
+    .timeline-event strong { color: var(--text); font-weight: 600; }
+
+    /* ── COMPARE TABLE ── */
+    .compare-wrap { overflow-x: auto; margin: 32px 0; }
+    .compare-table { width: 100%; border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border); border-collapse: collapse; }
+    .compare-table th, .compare-table td { padding: 12px 16px; font-family: var(--font-ui); font-size: 13px; line-height: 1.5; text-align: left; border-bottom: 1px solid var(--border); }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table thead th { background: var(--surface2); font-size: 11px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; padding: 13px 16px; }
+    .compare-table tbody tr:hover { background: var(--surface); }
+    .th-before { color: var(--gold); }
+    .th-after  { color: var(--lapis); }
+    .td-muted  { color: var(--text-muted); font-weight: 500; }
+
+    /* ── ILLUS WRAP ── */
+    .illus-wrap { margin: 32px 0; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; }
+    .illus-wrap svg { display: block; width: 100%; height: auto; }
+    .illus-caption { padding: 10px 16px; background: var(--surface2); border-top: 1px solid var(--border); font-family: var(--font-ui); font-size: 13px; color: var(--text-dim); font-style: italic; text-align: center; line-height: 1.55; }
+
+    /* ── SOURCES ── */
+    .sources { margin: 52px 0 32px; padding-top: 32px; border-top: 1px solid var(--border); }
+    .sources-title { font-family: var(--font-ui); font-size: 10px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 14px; }
+    .source-item { font-family: var(--font-ui); font-size: 13px; color: var(--text-dim); padding: 8px 0; border-bottom: 1px solid var(--border); line-height: 1.55; }
+    .source-item:last-child { border-bottom: none; }
+    .source-item a { color: var(--gold); text-decoration: none; }
+    .source-item a:hover { text-decoration: underline; }
+
+    /* ── REVEAL ── */
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 640px) {
+      .hero { min-height: 100svh; }
+      .hero-astrolabe { width: clamp(140px,55vw,220px); opacity: .2; right: -10px; top: 22%; transform: translateY(0); }
+      .pull-quote { margin: 28px 0; padding: 20px 18px; }
+      .scholar-grid { grid-template-columns: 1fr; }
+      .stat-grid { grid-template-columns: repeat(2,1fr); gap: 1.2rem; }
+    }
+
+    @media (max-width: 480px) {
+      .hero-content { padding: 26px 16px 44px; }
+      .article-wrap { padding: 0 14px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══════════ HERO ══════════ -->
+<div class="hero">
+  <div class="hero-bg"></div>
+
+  <div class="hero-astrolabe">
+    <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="aG" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#2a1e08" stop-opacity=".9"/>
+          <stop offset="100%" stop-color="#0d0a04" stop-opacity=".6"/>
+        </radialGradient>
+        <radialGradient id="aC" cx="40%" cy="38%" r="60%">
+          <stop offset="0%" stop-color="#f5dfa0"/>
+          <stop offset="50%" stop-color="#c9943a"/>
+          <stop offset="100%" stop-color="#5a3a08"/>
+        </radialGradient>
+        <filter id="aGl"><feGaussianBlur stdDeviation="2.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+      </defs>
+      <circle cx="200" cy="200" r="192" fill="url(#aG)" stroke="#c9943a" stroke-width="1.2" opacity=".9"/>
+      <g class="astr-outer" fill="none" stroke="#c9943a" opacity=".6">
+        <circle cx="200" cy="200" r="178" stroke-width=".5" opacity=".4"/>
+        <line x1="200" y1="22" x2="200" y2="36" stroke-width="1.4"/>
+        <line x1="200" y1="22" x2="200" y2="36" stroke-width="1.4" transform="rotate(30,200,200)"/>
+        <line x1="200" y1="22" x2="200" y2="36" stroke-width="1.4" transform="rotate(60,200,200)"/>
+        <line x1="200" y1="22" x2="200" y2="36" stroke-width="1.4" transform="rotate(90,200,200)"/>
+        <line x1="200" y1="22" x2="200" y2="36" stroke-width="1.4" transform="rotate(120,200,200)"/>
+        <line x1="200" y1="22" x2="200" y2="36" stroke-width="1.4" transform="rotate(150,200,200)"/>
+        <line x1="200" y1="22" x2="200" y2="36" stroke-width="1.4" transform="rotate(180,200,200)"/>
+        <line x1="200" y1="22" x2="200" y2="36" stroke-width="1.4" transform="rotate(210,200,200)"/>
+        <line x1="200" y1="22" x2="200" y2="36" stroke-width="1.4" transform="rotate(240,200,200)"/>
+        <line x1="200" y1="22" x2="200" y2="36" stroke-width="1.4" transform="rotate(270,200,200)"/>
+        <line x1="200" y1="22" x2="200" y2="36" stroke-width="1.4" transform="rotate(300,200,200)"/>
+        <line x1="200" y1="22" x2="200" y2="36" stroke-width="1.4" transform="rotate(330,200,200)"/>
+      </g>
+      <g class="astr-rete" fill="none" stroke="#c9943a" opacity=".45">
+        <circle cx="200" cy="200" r="150" stroke-width=".6" stroke-dasharray="3 4"/>
+        <circle cx="200" cy="200" r="110" stroke-width=".5" stroke-dasharray="2 5"/>
+        <circle cx="200" cy="200" r="80" stroke-width=".5" stroke-dasharray="2 4"/>
+        <circle cx="200" cy="50" r="4" fill="#c9943a"/>
+        <circle cx="200" cy="50" r="4" fill="#c9943a" transform="rotate(60,200,200)"/>
+        <circle cx="200" cy="50" r="4" fill="#c9943a" transform="rotate(120,200,200)"/>
+        <circle cx="200" cy="50" r="4" fill="#c9943a" transform="rotate(180,200,200)"/>
+        <circle cx="200" cy="50" r="4" fill="#c9943a" transform="rotate(240,200,200)"/>
+        <circle cx="200" cy="50" r="4" fill="#c9943a" transform="rotate(300,200,200)"/>
+      </g>
+      <g class="astr-inner" fill="none" stroke="#7eb8c9" opacity=".3">
+        <circle cx="200" cy="200" r="120" stroke-width=".5" stroke-dasharray="4 6"/>
+        <circle cx="200" cy="200" r="90"  stroke-width=".5" stroke-dasharray="3 5"/>
+        <line x1="200" y1="80" x2="200" y2="320" stroke-width=".5" opacity=".6"/>
+        <line x1="80" y1="200" x2="320" y2="200" stroke-width=".5" opacity=".6"/>
+        <line x1="200" y1="80" x2="200" y2="320" stroke-width=".5" opacity=".4" transform="rotate(45,200,200)"/>
+        <line x1="200" y1="80" x2="200" y2="320" stroke-width=".5" opacity=".4" transform="rotate(-45,200,200)"/>
+      </g>
+      <g class="astr-mid" fill="none" stroke="#c9943a" opacity=".38">
+        <circle cx="200" cy="200" r="160" stroke-width=".8"/>
+        <polygon points="200,40 360,140 360,260 200,360 40,260 40,140" stroke-width=".6" stroke-dasharray="5 8" opacity=".5"/>
+      </g>
+      <g class="astr-alid" filter="url(#aGl)">
+        <line x1="200" y1="30" x2="200" y2="370" stroke="#e8b96a" stroke-width="1.4" opacity=".7"/>
+        <rect x="193" y="28" width="14" height="10" rx="2" fill="#1a1205" stroke="#c9943a" stroke-width=".8" opacity=".9"/>
+        <rect x="193" y="362" width="14" height="10" rx="2" fill="#1a1205" stroke="#c9943a" stroke-width=".8" opacity=".9"/>
+      </g>
+      <circle cx="200" cy="200" r="14" fill="url(#aC)" stroke="#c9943a" stroke-width="1" filter="url(#aGl)"/>
+      <circle cx="200" cy="200" r="5" fill="#f5dfa0" opacity=".9"/>
+      <circle cx="200" cy="14" r="10" fill="none" stroke="#c9943a" stroke-width="1.2" opacity=".8"/>
+      <circle cx="200" cy="8"  r="4"  fill="none" stroke="#c9943a" stroke-width="1"   opacity=".7"/>
+      <g font-family="'DM Sans',sans-serif" font-size="7" fill="#c9943a" opacity=".6" text-anchor="middle">
+        <text x="200" y="47">بغداد</text>
+        <text x="200" y="47" transform="rotate(60,200,200)">Nalanda</text>
+        <text x="200" y="47" transform="rotate(120,200,200)">Córdoba</text>
+        <text x="200" y="47" transform="rotate(180,200,200)">Timbuktu</text>
+        <text x="200" y="47" transform="rotate(240,200,200)">Alexandria</text>
+        <text x="200" y="47" transform="rotate(300,200,200)">Samarkand</text>
+      </g>
+    </svg>
+  </div>
+
+  <div class="hero-content">
+    <div class="hero-category"><span class="hero-category-line"></span>SEJARAH &amp; EPISTEMOLOGI</div>
+    <h1 class="hero-title">
+      <span class="line1">ILMU PENGETAHUAN</span>
+      <span class="line2">BUKAN</span>
+      <span class="line3">MILIK EROPA</span>
+    </h1>
+    <p class="hero-sub">Mengapa buku sejarah kita penuh nama Eropa — dan siapa saja ilmuwan yang sengaja dilupakan dari narasi dominan itu.</p>
+    <div class="hero-meta">
+      <span class="hero-meta-pill gold">SEJARAH</span>
+      <span class="hero-meta-pill lapis">EPISTEMOLOGI</span>
+      <span>Mei 2026</span>
+      <span>⏱ ~12 menit baca</span>
+      <span>Redaksi KBDI</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ STAT BAND ══════════ -->
+<div class="stat-band">
+  <div class="stat-grid">
+    <div class="stat-item">
+      <span class="stat-number">800+</span>
+      <span class="stat-label">Tahun kejayaan sains Islam sebelum Renaisans Eropa</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">60+</span>
+      <span class="stat-label">Kata Inggris/Latin berasal dari bahasa Arab ilmiah</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">427 M</span>
+      <span class="stat-label">Nalanda berdiri — 661 tahun sebelum Bologna</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">700 rb</span>
+      <span class="stat-label">Manuskrip tersimpan di Sankore, Timbuktu</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ ARTIKEL ══════════ -->
+<main style="padding-top:56px; padding-bottom:80px;">
+<div class="article-wrap">
+
+  <!-- S1 -->
+  <section class="section reveal">
+    <div class="section-num">01 — Pertanyaan yang Jarang Ditanyakan</div>
+    <h2 class="section-title">Mengapa Newton Lebih Familiar dari Ibn al-Haytham?</h2>
+    <div class="prose">
+      <p>Tanyakan kepada siapa saja — pelajar SMA, mahasiswa, bahkan guru sejarah — nama ilmuwan terbesar yang mereka tahu. Hampir pasti jawabannya: Newton, Einstein, Darwin, Galileo, Copernicus. Semua nama Eropa. Bukan karena tidak ada yang lain — tapi karena itulah yang diajarkan.</p>
+      <p>Ibn al-Haytham membuktikan teori cahaya dan penglihatan lima abad sebelum Newton. Al-Khwarizmi meletakkan fondasi aljabar yang tanpanya komputer tidak akan ada. Aryabhata menghitung panjang satu tahun matahari dengan akurasi mengagumkan di abad ke-5. Tapi nama-nama ini nyaris tidak muncul di buku teks sekolah di seluruh dunia — termasuk Indonesia.</p>
+      <p>Ini bukan kebetulan. Ini adalah produk dari proses sejarah yang sangat konkret: kolonialisme, dan warisan epistemiknya yang masih berjalan hingga hari ini.</p>
+    </div>
+
+    <div class="pull-quote reveal">
+      Sejarah ilmu pengetahuan adalah sejarah yang ditulis oleh pemenang — dan pemenangnya kebetulan adalah kekuatan kolonial Eropa yang kemudian menentukan kurikulum dunia.
+      <cite>— Adaptasi dari argumen Aníbal Quijano, Coloniality of Power (2000)</cite>
+    </div>
+  </section>
+
+  <!-- DIVIDER 1 -->
+  <div class="section-divider reveal">
+    <div class="sdiv-line"></div>
+    <div class="sdiv-gem">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="12,2 22,9 22,15 12,22 2,15 2,9" fill="none" stroke="#c9943a" stroke-width="1" class="girih-spin" opacity=".7"/>
+        <polygon points="12,5 19,10 19,14 12,19 5,14 5,10" fill="none" stroke="#c9943a" stroke-width=".5" opacity=".4"/>
+        <circle cx="12" cy="12" r="2.5" fill="#c9943a" opacity=".6"/>
+      </svg>
+    </div>
+    <div class="sdiv-line rev"></div>
+  </div>
+
+  <!-- S2 -->
+  <section class="section reveal">
+    <div class="section-num">02 — Sebelum Eropa Dominan</div>
+    <h2 class="section-title">Pusat-Pusat Pengetahuan yang Terlupakan</h2>
+    <div class="prose">
+      <p>Untuk memahami distorsi ini, kita perlu mundur ke sebelum abad ke-15 — masa ketika Eropa sama sekali bukan pusat peradaban intelektual dunia. Selama berabad-abad, kota-kota seperti Baghdad, Alexandria, Cordoba, Timbuktu, dan Nalanda adalah tempat di mana pengetahuan manusia paling canggih dihasilkan, disimpan, dan ditransmisikan.</p>
+      <p><strong>Bayt al-Hikmah</strong> (Rumah Kebijaksanaan) di Baghdad, didirikan sekitar 830 M, adalah institusi akademik paling produktif dalam sejarah manusia sebelum era modern. Di Afrika Barat, <strong>Universitas Sankore di Timbuktu</strong> menyimpan hingga 700.000 manuskrip pada abad ke-14–16. Di Asia Selatan, <strong>Nalanda</strong> yang berdiri sejak 427 M mendidik lebih dari 10.000 mahasiswa pada puncaknya.</p>
+    </div>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-period">427 M</div>
+        <div class="timeline-event"><strong>Nalanda</strong> berdiri di Bihar, India — universitas terbesar di dunia kuno, bertahan hampir 700 tahun.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-period">Abad ke-8–9 M</div>
+        <div class="timeline-event"><strong>Al-Khwarizmi</strong> menulis <em>Al-Kitab al-Mukhtasar fi Hisab al-Jabr</em> — asal mula kata "aljabar" dan "algoritma".</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-period">1021 M</div>
+        <div class="timeline-event"><strong>Ibn al-Haytham</strong> menyelesaikan <em>Kitab al-Manazir</em> — teori penglihatan empiris pertama, 600 tahun sebelum Newton.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-period">Abad ke-14–16 M</div>
+        <div class="timeline-event"><strong>Sankore, Timbuktu</strong> berkembang menjadi pusat keilmuan Islam terbesar di Afrika.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-period">1088 M</div>
+        <div class="timeline-event"><strong>Universitas Bologna</strong> berdiri — universitas tertua Eropa. Nalanda sudah berumur 661 tahun saat ini.</div>
+      </div>
+    </div>
+
+    <div class="note-box reveal">
+      <div class="note-box-label">📖 Catatan Bahasa</div>
+      Kata-kata seperti <em>algebra</em>, <em>algorithm</em>, <em>chemistry</em>, <em>zenith</em>, <em>nadir</em>, <em>alcohol</em>, <em>azimuth</em>, <em>cipher</em> — semuanya berasal dari bahasa Arab. Warisan nyata dari masa ketika peradaban Islam memimpin sains dunia.
+    </div>
+  </section>
+
+  <!-- DIVIDER 2 -->
+  <div class="section-divider reveal">
+    <div class="sdiv-line"></div>
+    <div class="sdiv-gem">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="12,2 22,7 22,17 12,22 2,17 2,7" fill="none" stroke="#7eb8c9" stroke-width="1" class="girih-spin-rev" opacity=".7"/>
+        <circle cx="12" cy="12" r="4" fill="none" stroke="#7eb8c9" stroke-width=".8" opacity=".5"/>
+        <circle cx="12" cy="12" r="1.5" fill="#7eb8c9" opacity=".6"/>
+      </svg>
+    </div>
+    <div class="sdiv-line rev"></div>
+  </div>
+
+  <!-- S3 -->
+  <section class="section reveal">
+    <div class="section-num">03 — Kondisi Eropa</div>
+    <h2 class="section-title">Mengapa Eropa Akhirnya Memimpin — Bukan karena Keistimewaan Bawaan</h2>
+    <div class="prose">
+      <p>Eropa memang memiliki kondisi struktural nyata yang mendukung ledakan saintifik sejak abad ke-15. Tapi penting untuk dipahami: ini adalah kondisi historis yang terbentuk, bukan "keunggulan ras" atau "bakat alamiah" seperti yang pernah diklaim para apologis kolonial.</p>
+    </div>
+
+    <div class="highlight-box reveal">
+      <h4>Kondisi Struktural yang Nyata di Eropa (Abad 15–19)</h4>
+      <ul>
+        <li><strong>Mosaik negara-negara kecil yang bersaing:</strong> Ilmuwan yang diusir dari satu wilayah bisa berlindung di wilayah lain. Persaingan mendorong inovasi militer, navigasi, dan saintifik.</li>
+        <li><strong>Kapitalisme merkantil dan patron:</strong> Kelas pedagang punya insentif finansial untuk mendanai riset navigasi, astronomi, dan metalurgi karena ada keuntungan ekonomi langsung.</li>
+        <li><strong>Universitas yang terlembagakan:</strong> Meski lahir jauh setelah Nalanda, universitas Eropa menciptakan ekosistem transmisi pengetahuan lintas generasi yang konsisten.</li>
+        <li><strong>Reformasi Protestan (1517):</strong> Perpecahan otoritas gereja membuka ruang bagi pemikiran yang bertentangan dengan dogma — termasuk sains empiris.</li>
+        <li><strong>Warisan terjemahan Islam:</strong> Banyak "penemuan" Renaisans adalah pengembangan dari apa yang sudah dikerjakan di Bayt al-Hikmah Baghdad. Eropa mewarisi langsung dari sarjana Islam.</li>
+      </ul>
+    </div>
+
+    <!-- SVG B: TIMELINE VERTIKAL -->
+    <div class="illus-wrap reveal" id="timelineWrap">
+      <svg id="timelineSvg" viewBox="0 0 460 820" xmlns="http://www.w3.org/2000/svg" style="background:#130e06; display:block; width:100%; height:auto;">
+        <defs>
+          <marker id="arrowG" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+            <polygon points="0,0 8,4 0,8" fill="#c9943a" opacity=".8"/>
+          </marker>
+          <marker id="arrowB" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+            <polygon points="0,0 8,4 0,8" fill="#7eb8c9" opacity=".8"/>
+          </marker>
+        </defs>
+
+        <!-- Label kolom -->
+        <text x="115" y="40" font-family="'DM Sans',sans-serif" font-size="15" font-weight="700" fill="#c9943a" text-anchor="middle" letter-spacing=".1em">NON-EROPA</text>
+        <text x="345" y="40" font-family="'DM Sans',sans-serif" font-size="15" font-weight="700" fill="#7eb8c9" text-anchor="middle" letter-spacing=".1em">EROPA</text>
+
+        <!-- Garis sumbu waktu vertikal -->
+        <line x1="230" y1="55" x2="230" y2="780" stroke="rgba(201,148,58,0.15)" stroke-width="1.5" stroke-dasharray="5 6"/>
+        <text x="230" y="800" font-family="'DM Sans',sans-serif" font-size="11" fill="rgba(201,148,58,.35)" text-anchor="middle">↓ waktu</text>
+
+        <!-- Label tahun sumbu tengah -->
+        <g font-family="'DM Sans',sans-serif" font-size="11" fill="rgba(201,148,58,.4)" text-anchor="middle">
+          <text x="230" y="108">427 M</text>
+          <text x="230" y="218">820 M</text>
+          <text x="230" y="308">1000 M</text>
+          <text x="230" y="368">1021 M</text>
+          <text x="230" y="448">1088 M</text>
+          <text x="230" y="548">1300 M</text>
+          <text x="230" y="648">1543 M</text>
+          <text x="230" y="698">1610 M</text>
+          <text x="230" y="758">1687 M</text>
+        </g>
+
+        <!-- Garis kiri (non-Eropa) — tumbuh ke bawah -->
+        <line id="lineGold" x1="115" y1="60" x2="115" y2="60"
+              stroke="#c9943a" stroke-width="2.5" opacity=".65" marker-end="url(#arrowG)"/>
+
+        <!-- Garis kanan (Eropa) — tumbuh ke bawah mulai dari Bologna -->
+        <line id="lineLapis" x1="345" y1="440" x2="345" y2="440"
+              stroke="#7eb8c9" stroke-width="2.5" opacity=".55" marker-end="url(#arrowB)"/>
+
+        <!-- Titik non-Eropa -->
+        <g id="dotsGold" opacity="0">
+          <!-- Nalanda 427 -->
+          <circle cx="115" cy="100" r="7" fill="#c9943a" opacity=".95"/>
+          <line x1="115" y1="100" x2="195" y2="100" stroke="#c9943a" stroke-width=".8" opacity=".4" stroke-dasharray="3 3"/>
+          <text x="108" y="96" font-family="'DM Sans',sans-serif" font-size="13" font-weight="700" fill="#c9943a" text-anchor="end">Nalanda</text>
+          <text x="108" y="112" font-family="'DM Sans',sans-serif" font-size="11" fill="#c9943a" text-anchor="end" opacity=".6">Matematika, Filsafat</text>
+
+          <!-- Al-Khwarizmi 820 -->
+          <circle cx="115" cy="210" r="7" fill="#c9943a" opacity=".95"/>
+          <line x1="115" y1="210" x2="195" y2="210" stroke="#c9943a" stroke-width=".8" opacity=".4" stroke-dasharray="3 3"/>
+          <text x="108" y="206" font-family="'DM Sans',sans-serif" font-size="13" font-weight="700" fill="#c9943a" text-anchor="end">Al-Khwarizmi</text>
+          <text x="108" y="222" font-family="'DM Sans',sans-serif" font-size="11" fill="#c9943a" text-anchor="end" opacity=".6">Aljabar, Algoritma</text>
+
+          <!-- Ibn Sina 1000 -->
+          <circle cx="115" cy="300" r="7" fill="#c9943a" opacity=".95"/>
+          <line x1="115" y1="300" x2="195" y2="300" stroke="#c9943a" stroke-width=".8" opacity=".4" stroke-dasharray="3 3"/>
+          <text x="108" y="296" font-family="'DM Sans',sans-serif" font-size="13" font-weight="700" fill="#c9943a" text-anchor="end">Ibn Sina</text>
+          <text x="108" y="312" font-family="'DM Sans',sans-serif" font-size="11" fill="#c9943a" text-anchor="end" opacity=".6">Kedokteran</text>
+
+          <!-- Ibn al-Haytham 1021 -->
+          <circle cx="115" cy="360" r="7" fill="#c9943a" opacity=".95"/>
+          <line x1="115" y1="360" x2="195" y2="360" stroke="#c9943a" stroke-width=".8" opacity=".4" stroke-dasharray="3 3"/>
+          <text x="108" y="356" font-family="'DM Sans',sans-serif" font-size="13" font-weight="700" fill="#c9943a" text-anchor="end">Ibn al-Haytham</text>
+          <text x="108" y="372" font-family="'DM Sans',sans-serif" font-size="11" fill="#c9943a" text-anchor="end" opacity=".6">Optik, Sains empiris</text>
+
+          <!-- Sankore 1300 -->
+          <circle cx="115" cy="540" r="7" fill="#e8b96a" opacity=".95"/>
+          <line x1="115" y1="540" x2="195" y2="540" stroke="#e8b96a" stroke-width=".8" opacity=".4" stroke-dasharray="3 3"/>
+          <text x="108" y="536" font-family="'DM Sans',sans-serif" font-size="13" font-weight="700" fill="#e8b96a" text-anchor="end">Sankore</text>
+          <text x="108" y="552" font-family="'DM Sans',sans-serif" font-size="11" fill="#e8b96a" text-anchor="end" opacity=".6">Timbuktu, Mali</text>
+        </g>
+
+        <!-- Titik Eropa -->
+        <g id="dotsLapis" opacity="0">
+          <!-- Bologna 1088 -->
+          <circle cx="345" cy="440" r="7" fill="#7eb8c9" opacity=".95"/>
+          <line x1="265" y1="440" x2="345" y2="440" stroke="#7eb8c9" stroke-width=".8" opacity=".4" stroke-dasharray="3 3"/>
+          <text x="352" y="436" font-family="'DM Sans',sans-serif" font-size="13" font-weight="700" fill="#7eb8c9">Bologna</text>
+          <text x="352" y="452" font-family="'DM Sans',sans-serif" font-size="11" fill="#7eb8c9" opacity=".6">Univ. pertama Eropa</text>
+
+          <!-- Copernicus 1543 -->
+          <circle cx="345" cy="640" r="7" fill="#7eb8c9" opacity=".95"/>
+          <line x1="265" y1="640" x2="345" y2="640" stroke="#7eb8c9" stroke-width=".8" opacity=".4" stroke-dasharray="3 3"/>
+          <text x="352" y="636" font-family="'DM Sans',sans-serif" font-size="13" font-weight="700" fill="#7eb8c9">Copernicus</text>
+          <text x="352" y="652" font-family="'DM Sans',sans-serif" font-size="11" fill="#7eb8c9" opacity=".6">Astronomi heliosentris</text>
+
+          <!-- Galileo 1610 -->
+          <circle cx="345" cy="690" r="7" fill="#7eb8c9" opacity=".95"/>
+          <line x1="265" y1="690" x2="345" y2="690" stroke="#7eb8c9" stroke-width=".8" opacity=".4" stroke-dasharray="3 3"/>
+          <text x="352" y="686" font-family="'DM Sans',sans-serif" font-size="13" font-weight="700" fill="#7eb8c9">Galileo</text>
+          <text x="352" y="702" font-family="'DM Sans',sans-serif" font-size="11" fill="#7eb8c9" opacity=".6">Fisika, Mekanika</text>
+
+          <!-- Newton 1687 -->
+          <circle cx="345" cy="750" r="7" fill="#7eb8c9" opacity=".95"/>
+          <line x1="265" y1="750" x2="345" y2="750" stroke="#7eb8c9" stroke-width=".8" opacity=".4" stroke-dasharray="3 3"/>
+          <text x="352" y="746" font-family="'DM Sans',sans-serif" font-size="13" font-weight="700" fill="#7eb8c9">Newton</text>
+          <text x="352" y="762" font-family="'DM Sans',sans-serif" font-size="11" fill="#7eb8c9" opacity=".6">Gravitasi, Kalkulus</text>
+        </g>
+
+        <!-- Anotasi: garis emas mulai jauh lebih awal -->
+        <rect x="42" y="57" width="145" height="22" rx="3" fill="rgba(201,148,58,0.12)" stroke="rgba(201,148,58,0.3)" stroke-width=".8"/>
+        <text x="115" y="72" font-family="'DM Sans',sans-serif" font-size="11" fill="#c9943a" text-anchor="middle" opacity=".8">▶ mulai 427 M</text>
+        <rect x="272" y="437" width="148" height="22" rx="3" fill="rgba(126,184,201,0.12)" stroke="rgba(126,184,201,0.3)" stroke-width=".8"/>
+        <text x="346" y="452" font-family="'DM Sans',sans-serif" font-size="11" fill="#7eb8c9" text-anchor="middle" opacity=".8">▶ mulai 1088 M</text>
+      </svg>
+      <div class="illus-caption">Garis emas dimulai jauh lebih awal — tapi dalam buku sejarah, hanya garis biru yang diceritakan dengan lengkap.</div>
+    </div>
+
+    <div class="prose">
+      <p>Tidak ada dari kondisi-kondisi ini yang bersifat "alamiah". Sebagian besar adalah keberuntungan historis dan geografis — dan yang terpenting, kondisi ini baru menjadi dominan relatif belakangan dalam sejarah manusia.</p>
+    </div>
+  </section>
+
+  <!-- DIVIDER 3 -->
+  <div class="section-divider reveal">
+    <div class="sdiv-line"></div>
+    <div class="sdiv-gem">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="12,2 20,19 4,19" fill="none" stroke="#c9943a" stroke-width="1" class="girih-spin" opacity=".7"/>
+        <polygon points="12,7 18,19 6,19" fill="none" stroke="#c9943a" stroke-width=".5" opacity=".4"/>
+        <circle cx="12" cy="14" r="2" fill="#c9943a" opacity=".5"/>
+      </svg>
+    </div>
+    <div class="sdiv-line rev"></div>
+  </div>
+
+  <!-- S4 -->
+  <section class="section reveal">
+    <div class="section-num">04 — Kolonialisme sebagai Mesin Penyebaran</div>
+    <h2 class="section-title">Bagaimana Kolonialisme Mencetak Ulang Narasi Pengetahuan Dunia</h2>
+    <div class="prose">
+      <p>Ketika kekuatan kolonial Eropa memperluas jangkauannya ke Asia, Afrika, dan Amerika, yang ikut dibawa bukan hanya senjata dan agama. Yang jauh lebih bertahan lama adalah <strong>sistem epistemologi</strong> — cara memandang apa yang disebut pengetahuan yang valid, siapa yang berhak memproduksinya, dan dalam bahasa apa ia harus ditulis.</p>
+      <p>Sekolah-sekolah kolonial di seluruh dunia jajahan mengajarkan Newton, Descartes, dan Linnaeus — bukan Ibn Sina, bukan Aryabhata, bukan sistem klasifikasi tanaman lokal yang sudah dikembangkan selama ribuan tahun. Hasilnya: generasi terdidik di seluruh bekas jajahan belajar sains melalui lensa tunggal, dan ketika mereka kemudian menulis buku dan membuat kurikulum, referensinya sudah otomatis Eropa-sentris.</p>
+    </div>
+
+    <!-- SVG C: BUKU DITULIS ULANG — dua halaman sama besar -->
+    <div class="illus-wrap reveal">
+      <svg viewBox="0 0 600 320" xmlns="http://www.w3.org/2000/svg" style="background:#130e06;">
+        <defs>
+          <radialGradient id="pgL" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#2a1e08"/><stop offset="100%" stop-color="#1a1205"/>
+          </radialGradient>
+          <radialGradient id="pgR" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#0a1520"/><stop offset="100%" stop-color="#060e18"/>
+          </radialGradient>
+          <filter id="pgGl"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        </defs>
+
+        <!-- Punggung buku — tepat tengah -->
+        <rect x="290" y="20" width="20" height="268" rx="3" fill="#3a2808" stroke="#c9943a" stroke-width=".8" opacity=".9"/>
+        <line x1="300" y1="20" x2="300" y2="288" stroke="#c9943a" stroke-width=".4" opacity=".4"/>
+
+        <!-- Halaman KIRI — x=30, lebar 258 -->
+        <rect x="30" y="20" width="258" height="268" rx="4" fill="url(#pgL)" stroke="#c9943a" stroke-width=".9" opacity=".9"/>
+        <rect x="42" y="32" width="234" height="244" rx="2" fill="none" stroke="#c9943a" stroke-width=".5" opacity=".3"/>
+
+        <!-- Header kiri -->
+        <text x="159" y="54" font-family="'Cinzel',serif" font-size="11" fill="#c9943a" text-anchor="middle" letter-spacing=".12em" opacity=".8" font-weight="600">MANUSKRIP ASLI</text>
+        <line x1="50" y1="60" x2="268" y2="60" stroke="#c9943a" stroke-width=".6" opacity=".3"/>
+
+        <!-- Teks Arab simulasi — 8 baris -->
+        <g opacity=".52" stroke="#c9943a" stroke-width="1.4" fill="none">
+          <path d="M254,76 Q234,72 214,76 Q194,80 174,76 Q154,72 134,76 Q114,80 94,76 Q80,73 68,76"/>
+          <path d="M250,94 Q228,90 206,94 Q184,98 162,94 Q140,90 118,94 Q96,98 68,94"/>
+          <path d="M248,112 Q224,108 200,112 Q176,116 152,112 Q128,108 104,112 Q84,116 68,112"/>
+          <path d="M254,130 Q230,126 206,130 Q182,134 158,130 Q134,126 110,130 Q88,134 68,130"/>
+          <path d="M250,148 Q226,144 202,148 Q178,152 154,148 Q130,144 106,148 Q84,152 68,148"/>
+          <path d="M246,166 Q222,162 198,166 Q174,170 150,166 Q126,162 102,166 Q82,170 68,166"/>
+          <path d="M252,184 Q228,180 204,184 Q180,188 156,184 Q132,180 108,184 Q86,188 68,184"/>
+          <path d="M248,202 Q224,198 200,202 Q176,206 152,202 Q128,198 104,202 Q82,206 68,202"/>
+        </g>
+
+        <!-- Ornamen sudut kiri -->
+        <g fill="none" stroke="#c9943a" stroke-width=".6" opacity=".4">
+          <path d="M42,32 Q56,32 56,46"/><path d="M274,32 Q260,32 260,46"/>
+          <path d="M42,276 Q56,276 56,262"/><path d="M274,276 Q260,276 260,262"/>
+        </g>
+
+        <!-- Judul arab dekoratif -->
+        <text x="159" y="250" font-family="serif" font-size="22" fill="#c9943a" text-anchor="middle" opacity=".18">كتاب المناظر</text>
+
+        <!-- Halaman KANAN — x=312, lebar 258 -->
+        <rect x="312" y="20" width="258" height="268" rx="4" fill="url(#pgR)" stroke="#7eb8c9" stroke-width=".9" opacity=".8"/>
+        <rect x="324" y="32" width="234" height="244" rx="2" fill="none" stroke="#7eb8c9" stroke-width=".5" opacity=".25"/>
+
+        <!-- Header kanan -->
+        <text x="441" y="54" font-family="'Cinzel',serif" font-size="11" fill="#7eb8c9" text-anchor="middle" letter-spacing=".12em" opacity=".8" font-weight="600">VERSI YANG DIAJARKAN</text>
+        <line x1="324" y1="60" x2="546" y2="60" stroke="#7eb8c9" stroke-width=".6" opacity=".25"/>
+
+        <!-- Teks Latin blok — 8 baris, sama jumlahnya -->
+        <g opacity=".38" fill="#a8d4e2">
+          <rect x="330" y="72"  width="228" height="10" rx="2"/>
+          <rect x="330" y="90"  width="210" height="10" rx="2"/>
+          <rect x="330" y="108" width="228" height="10" rx="2"/>
+          <rect x="330" y="126" width="195" height="10" rx="2"/>
+          <rect x="330" y="144" width="228" height="10" rx="2"/>
+          <rect x="330" y="162" width="215" height="10" rx="2"/>
+          <rect x="330" y="180" width="228" height="10" rx="2"/>
+          <rect x="330" y="198" width="188" height="10" rx="2"/>
+        </g>
+
+        <!-- Nama Eropa -->
+        <text x="441" y="248" font-family="'Cinzel',serif" font-size="13" fill="#7eb8c9" text-anchor="middle" opacity=".28" letter-spacing=".06em">NEWTON · GALILEO · DESCARTES</text>
+
+        <!-- Pena bergerak di punggung buku -->
+        <g>
+          <animateTransform attributeName="transform" type="translate"
+            values="0,35; 0,20; 0,5; 0,-10; 0,-25"
+            dur="5s" repeatCount="indefinite" calcMode="spline"
+            keySplines="0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1"
+            additive="sum"/>
+          <!-- Badan -->
+          <rect x="295" y="136" width="10" height="30" rx="2" fill="#c9943a" opacity=".9"/>
+          <!-- Ujung -->
+          <polygon points="300,136 295,124 305,124" fill="#f5dfa0" opacity=".95"/>
+          <!-- Pegangan -->
+          <rect x="295" y="166" width="10" height="8" rx="1.5" fill="#8a5a10" opacity=".85"/>
+          <!-- Glow -->
+          <circle cx="300" cy="127" r="5" fill="#f5dfa0" opacity=".3" filter="url(#pgGl)"/>
+        </g>
+
+        <!-- Panah animasi -->
+        <path d="M 288 175 Q 300 175 312 175" stroke="#c9943a" stroke-width="1.8" fill="none" stroke-dasharray="5 4" opacity=".6">
+          <animate attributeName="stroke-dashoffset" from="18" to="0" dur="1.2s" repeatCount="indefinite"/>
+        </path>
+
+        <!-- Label bawah -->
+        <text x="159" y="308" font-family="'DM Sans',sans-serif" font-size="12" fill="#c9943a" text-anchor="middle" opacity=".7">Pengetahuan asli</text>
+        <text x="441" y="308" font-family="'DM Sans',sans-serif" font-size="12" fill="#7eb8c9" text-anchor="middle" opacity=".65">Diajarkan via kurikulum kolonial</text>
+      </svg>
+      <div class="illus-caption">Manuskrip asli (kiri) ditulis ulang dalam format dan bahasa Eropa (kanan) — nama penulisnya sering ikut berganti dalam proses itu.</div>
+    </div>
+
+    <div class="compare-wrap reveal">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th style="color:var(--text-dim); width:26%">Aspek</th>
+            <th class="th-before">Sebelum Kolonialisme</th>
+            <th class="th-after">Setelah Kolonialisme</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="td-muted">Pusat pengetahuan</td><td style="color:var(--text-muted)">Tersebar: Baghdad, Nalanda, Timbuktu, Chang'an</td><td style="color:var(--text-muted)">Terpusat di Eropa Barat</td></tr>
+          <tr><td class="td-muted">Bahasa sains</td><td style="color:var(--text-muted)">Arab, Sanskrit, Persia, Latin, Mandarin</td><td style="color:var(--text-muted)">Inggris, Prancis, Jerman — lalu Inggris saja</td></tr>
+          <tr><td class="td-muted">Kurikulum global</td><td style="color:var(--text-muted)">Beragam, berbasis tradisi lokal</td><td style="color:var(--text-muted)">Terstandarisasi mengikuti model universitas Eropa</td></tr>
+          <tr><td class="td-muted">Pengetahuan "sah"</td><td style="color:var(--text-muted)">Beragam: oral, manuskrip, praktik</td><td style="color:var(--text-muted)">Hanya yang terpublikasi dalam bahasa Eropa</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- DIVIDER 4 -->
+  <div class="section-divider reveal">
+    <div class="sdiv-line"></div>
+    <div class="sdiv-gem">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <rect x="4" y="4" width="16" height="16" rx="8" fill="none" stroke="#7eb8c9" stroke-width="1" class="girih-spin-rev" opacity=".7"/>
+        <rect x="8" y="8" width="8" height="8" rx="4" fill="none" stroke="#7eb8c9" stroke-width=".7" opacity=".5"/>
+        <circle cx="12" cy="12" r="2" fill="#7eb8c9" opacity=".6"/>
+      </svg>
+    </div>
+    <div class="sdiv-line rev"></div>
+  </div>
+
+  <!-- S5 -->
+  <section class="section reveal">
+    <div class="section-num">05 — Coloniality of Knowledge</div>
+    <h2 class="section-title">Kolonialisme Fisik Berakhir. Kolonialisme Epistemik Berlanjut.</h2>
+    <div class="prose">
+      <p>Filsuf sosial Peru <strong>Aníbal Quijano</strong> memperkenalkan konsep <em>"Coloniality of Power"</em> pada tahun 2000. Argumennya sederhana tapi tajam: kolonialisme sebagai sistem pemerintahan mungkin sudah berakhir — Indonesia merdeka 1945, India 1947, Kenya 1963. Tapi <em>coloniality</em> — pola pikir, hierarki nilai, dan struktur pengetahuan yang diciptakan kolonialisme — terus beroperasi jauh setelah bendera kolonial diturunkan.</p>
+      <p>Dalam konteks pengetahuan, ini berarti: standar apa yang disebut "ilmiah", siapa yang dianggap otoritatif, jurnal mana yang dianggap prestisius, dan bahasa apa yang harus dipakai — semua masih mengikuti struktur yang dibentuk di era kolonial. Seorang peneliti di Yogyakarta yang menulis temuan luar biasa dalam bahasa Indonesia akan jauh lebih sulit diakui secara global dibanding peneliti dengan temuan biasa yang menulis dalam bahasa Inggris di jurnal Barat.</p>
+    </div>
+
+    <div class="pull-quote reveal">
+      Kita sudah merdeka secara politik. Tapi kurikulum kita, sistem akademik kita, dan standar "ilmiah" kita masih mengikuti struktur yang dibangun untuk melayani kepentingan peradaban yang pernah menjajah kita.
+      <cite>— Adaptasi dari Walter Mignolo, Local Histories/Global Designs (2000)</cite>
+    </div>
+  </section>
+
+  <!-- DIVIDER 5 -->
+  <div class="section-divider reveal">
+    <div class="sdiv-line"></div>
+    <div class="sdiv-gem">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="12,2 22,8 22,16 12,22 2,16 2,8" fill="none" stroke="#c9943a" stroke-width="1" class="girih-spin" opacity=".7"/>
+        <polygon points="12,6 18,9.5 18,14.5 12,18 6,14.5 6,9.5" fill="none" stroke="#c9943a" stroke-width=".6" opacity=".4"/>
+        <circle cx="12" cy="12" r="2.5" fill="none" stroke="#c9943a" stroke-width=".8" opacity=".6"/>
+      </svg>
+    </div>
+    <div class="sdiv-line rev"></div>
+  </div>
+
+  <!-- S6 -->
+  <section class="section reveal">
+    <div class="section-num">06 — Yang Seharusnya Ada di Buku Kita</div>
+    <h2 class="section-title">Ilmuwan yang Terpinggirkan dari Narasi Dominan</h2>
+    <div class="prose">
+      <p>Berikut sebagian kecil dari tokoh-tokoh yang kontribusinya fundamental bagi peradaban manusia — tapi hampir tidak pernah muncul di kurikulum standar di seluruh dunia, termasuk Indonesia.</p>
+    </div>
+
+    <!-- SVG D: PETA TRANSMISI PENGETAHUAN -->
+    <div class="illus-wrap reveal" id="mapWrap">
+      <svg id="mapSvg" viewBox="0 0 680 400" xmlns="http://www.w3.org/2000/svg" style="background:#130e06;">
+        <defs>
+          <filter id="dotGlow">
+            <feGaussianBlur stdDeviation="4" result="b"/>
+            <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+          <marker id="mArrow" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+            <polygon points="0,0 6,3 0,6" fill="#c9943a" opacity=".6"/>
+          </marker>
+        </defs>
+
+        <!-- Kontur benua — disederhanakan, hanya siluet -->
+        <!-- Eropa -->
+        <path d="M 248,60 Q 260,55 275,62 Q 290,58 300,65 Q 310,60 320,68 Q 325,75 318,85 Q 325,92 315,100 Q 305,108 295,105 Q 285,112 275,108 Q 265,115 255,110 Q 245,105 240,95 Q 235,85 242,75 Z" fill="rgba(201,148,58,0.06)" stroke="rgba(201,148,58,0.2)" stroke-width=".8"/>
+        <!-- Afrika -->
+        <path d="M 255,118 Q 270,115 285,120 Q 300,118 308,128 Q 315,140 312,158 Q 318,172 310,188 Q 305,205 295,218 Q 280,228 265,222 Q 250,228 240,215 Q 230,200 232,185 Q 228,168 235,152 Q 238,138 248,128 Z" fill="rgba(201,148,58,0.06)" stroke="rgba(201,148,58,0.15)" stroke-width=".8"/>
+        <!-- Asia Barat/Timur Tengah -->
+        <path d="M 320,68 Q 345,60 370,65 Q 395,62 415,72 Q 430,82 425,95 Q 435,108 420,118 Q 405,125 385,120 Q 365,128 345,122 Q 325,115 315,102 Q 310,88 318,76 Z" fill="rgba(201,148,58,0.06)" stroke="rgba(201,148,58,0.15)" stroke-width=".8"/>
+        <!-- Asia Selatan (India) -->
+        <path d="M 440,90 Q 465,85 480,95 Q 495,88 505,100 Q 510,115 500,128 Q 488,140 472,145 Q 455,148 442,138 Q 428,128 430,112 Q 432,98 440,90 Z" fill="rgba(126,184,201,0.06)" stroke="rgba(126,184,201,0.15)" stroke-width=".8"/>
+        <!-- Asia Tenggara hint -->
+        <path d="M 545,120 Q 560,115 572,125 Q 580,135 570,148 Q 558,155 545,148 Q 535,140 538,130 Z" fill="rgba(126,184,201,0.04)" stroke="rgba(126,184,201,0.1)" stroke-width=".6"/>
+        <!-- Afrika Barat (Mali/Timbuktu) -->
+        <path d="M 210,148 Q 230,142 248,150 Q 258,162 248,175 Q 235,182 218,178 Q 205,168 208,158 Z" fill="rgba(232,185,106,0.08)" stroke="rgba(232,185,106,0.18)" stroke-width=".8"/>
+        <!-- Eropa Barat (Spanyol/Andalusia) -->
+        <path d="M 230,95 Q 248,90 258,100 Q 262,112 250,120 Q 238,124 228,115 Q 220,105 226,98 Z" fill="rgba(126,184,201,0.06)" stroke="rgba(126,184,201,0.15)" stroke-width=".8"/>
+
+        <!-- Grid koordinat ringan -->
+        <g stroke="rgba(201,148,58,0.06)" stroke-width=".5">
+          <line x1="0" y1="100" x2="680" y2="100"/>
+          <line x1="0" y1="200" x2="680" y2="200"/>
+          <line x1="0" y1="300" x2="680" y2="300"/>
+          <line x1="170" y1="0" x2="170" y2="400"/>
+          <line x1="340" y1="0" x2="340" y2="400"/>
+          <line x1="510" y1="0" x2="510" y2="400"/>
+        </g>
+
+        <!-- === GARIS TRANSMISI (akan muncul via animasi JS) === -->
+        <!-- Baghdad → Cordoba -->
+        <path id="path1" class="tpath" d="M 378,92 Q 330,78 262,108" stroke="#c9943a" stroke-width="1.5" fill="none" stroke-dasharray="6 5" opacity="0" marker-end="url(#mArrow)"/>
+        <!-- Baghdad → Bologna/Eropa -->
+        <path id="path2" class="tpath" d="M 378,92 Q 350,70 285,82" stroke="#c9943a" stroke-width="1.5" fill="none" stroke-dasharray="6 5" opacity="0" marker-end="url(#mArrow)"/>
+        <!-- Nalanda → Baghdad -->
+        <path id="path3" class="tpath" d="M 472,112 Q 440,95 388,92" stroke="#c9943a" stroke-width="1.5" fill="none" stroke-dasharray="6 5" opacity="0" marker-end="url(#mArrow)"/>
+        <!-- Nalanda → Asia Tenggara -->
+        <path id="path4" class="tpath" d="M 480,118 Q 515,118 550,132" stroke="#c9943a" stroke-width="1.3" fill="none" stroke-dasharray="5 5" opacity="0" marker-end="url(#mArrow)"/>
+        <!-- Timbuktu → Cordoba -->
+        <path id="path5" class="tpath" d="M 228,162 Q 242,135 260,112" stroke="#e8b96a" stroke-width="1.3" fill="none" stroke-dasharray="5 5" opacity="0" marker-end="url(#mArrow)"/>
+        <!-- Cordoba → Bologna (Eropa) -->
+        <path id="path6" class="tpath" d="M 260,106 Q 270,88 285,82" stroke="#7eb8c9" stroke-width="1.5" fill="none" stroke-dasharray="6 5" opacity="0" marker-end="url(#mArrow)"/>
+
+        <!-- === TITIK KOTA === -->
+        <g id="cityDots" opacity="0">
+          <!-- Baghdad -->
+          <circle cx="378" cy="92" r="9" fill="#c9943a" opacity=".9" filter="url(#dotGlow)"/>
+          <circle cx="378" cy="92" r="5" fill="#f5dfa0"/>
+          <circle cx="378" cy="92" r="16" fill="none" stroke="#c9943a" stroke-width=".8" opacity=".35"/>
+          <text x="378" y="75" font-family="'DM Sans',sans-serif" font-size="13" font-weight="700" fill="#c9943a" text-anchor="middle">Baghdad</text>
+          <text x="378" y="62" font-family="'DM Sans',sans-serif" font-size="11" fill="#c9943a" text-anchor="middle" opacity=".65">830 M · Bayt al-Hikmah</text>
+
+          <!-- Nalanda -->
+          <circle cx="472" cy="112" r="9" fill="#c9943a" opacity=".85" filter="url(#dotGlow)"/>
+          <circle cx="472" cy="112" r="5" fill="#f5dfa0"/>
+          <circle cx="472" cy="112" r="16" fill="none" stroke="#c9943a" stroke-width=".8" opacity=".3"/>
+          <text x="472" y="96" font-family="'DM Sans',sans-serif" font-size="13" font-weight="700" fill="#c9943a" text-anchor="middle">Nalanda</text>
+          <text x="472" y="83" font-family="'DM Sans',sans-serif" font-size="11" fill="#c9943a" text-anchor="middle" opacity=".65">427 M · Bihar, India</text>
+
+          <!-- Timbuktu -->
+          <circle cx="228" cy="162" r="9" fill="#e8b96a" opacity=".85" filter="url(#dotGlow)"/>
+          <circle cx="228" cy="162" r="5" fill="#f5dfa0"/>
+          <circle cx="228" cy="162" r="16" fill="none" stroke="#e8b96a" stroke-width=".8" opacity=".3"/>
+          <text x="228" y="182" font-family="'DM Sans',sans-serif" font-size="13" font-weight="700" fill="#e8b96a" text-anchor="middle">Timbuktu</text>
+          <text x="228" y="196" font-family="'DM Sans',sans-serif" font-size="11" fill="#e8b96a" text-anchor="middle" opacity=".65">1300 M · Mali, Afrika Barat</text>
+
+          <!-- Cordoba/Andalusia -->
+          <circle cx="258" cy="108" r="8" fill="#c9943a" opacity=".8" filter="url(#dotGlow)"/>
+          <circle cx="258" cy="108" r="4" fill="#f5dfa0"/>
+          <text x="248" y="128" font-family="'DM Sans',sans-serif" font-size="12" font-weight="700" fill="#c9943a" text-anchor="middle">Córdoba</text>
+          <text x="248" y="141" font-family="'DM Sans',sans-serif" font-size="10" fill="#c9943a" text-anchor="middle" opacity=".6">Pusat terjemahan</text>
+
+          <!-- Bologna/Eropa -->
+          <circle cx="285" cy="80" r="8" fill="#7eb8c9" opacity=".85" filter="url(#dotGlow)"/>
+          <circle cx="285" cy="80" r="4" fill="#e0f0f8"/>
+          <circle cx="285" cy="80" r="15" fill="none" stroke="#7eb8c9" stroke-width=".8" opacity=".3"/>
+          <text x="310" y="72" font-family="'DM Sans',sans-serif" font-size="13" font-weight="700" fill="#7eb8c9">Bologna</text>
+          <text x="310" y="85" font-family="'DM Sans',sans-serif" font-size="11" fill="#7eb8c9" opacity=".65">1088 M · Eropa</text>
+        </g>
+
+        <!-- Legenda -->
+        <g font-family="'DM Sans',sans-serif" font-size="11" opacity="0" id="mapLegend">
+          <circle cx="30" cy="355" r="5" fill="#c9943a" opacity=".8"/>
+          <text x="42" y="359" fill="#c9943a" opacity=".8">Pusat Keilmuan Islam / Asia</text>
+          <circle cx="30" cy="375" r="5" fill="#e8b96a" opacity=".8"/>
+          <text x="42" y="379" fill="#e8b96a" opacity=".8">Pusat Keilmuan Afrika</text>
+          <circle cx="280" cy="355" r="5" fill="#7eb8c9" opacity=".8"/>
+          <text x="292" y="359" fill="#7eb8c9" opacity=".8">Penerima transmisi (Eropa)</text>
+          <line x1="430" y1="355" x2="460" y2="355" stroke="#c9943a" stroke-width="1.5" stroke-dasharray="4 3" opacity=".6"/>
+          <text x="468" y="359" fill="rgba(201,148,58,.7)">Jalur transmisi pengetahuan</text>
+        </g>
+
+        <!-- Label judul -->
+        <text x="340" y="22" font-family="'Cinzel',serif" font-size="13" fill="#c9943a" text-anchor="middle" opacity=".5" letter-spacing=".1em">PETA TRANSMISI PENGETAHUAN PRA-MODERN</text>
+      </svg>
+      <div class="illus-caption">Pengetahuan mengalir dari Baghdad ke Eropa melalui Córdoba, dari Nalanda ke seluruh Asia — jauh sebelum Eropa menjadi pusat ilmu dunia.</div>
+    </div>
+
+    <div class="scholar-grid">
+      <div class="scholar-card">
+        <span class="scholar-icon">∑</span>
+        <div class="scholar-era">780–850 M · Baghdad</div>
+        <div class="scholar-name">Al-Khwarizmi</div>
+        <div class="scholar-origin">Kekhalifahan Abbasiyah</div>
+        <div class="scholar-contrib">Bapak aljabar. Karyanya <em>Al-Jabr</em> menjadi standar matematika dunia selama 500 tahun. Kata "algoritma" berasal dari latinisasi namanya.</div>
+      </div>
+      <div class="scholar-card">
+        <span class="scholar-icon">👁</span>
+        <div class="scholar-era">965–1040 M · Basra</div>
+        <div class="scholar-name">Ibn al-Haytham</div>
+        <div class="scholar-origin">Kekhalifahan Fatimiyah</div>
+        <div class="scholar-contrib">Bapak optik modern. Membuktikan teori penglihatan empiris — mata menerima cahaya, bukan memancarkannya. Mendahului Newton 600 tahun.</div>
+      </div>
+      <div class="scholar-card">
+        <span class="scholar-icon">⚕</span>
+        <div class="scholar-era">980–1037 M · Bukhara</div>
+        <div class="scholar-name">Ibn Sina (Avicenna)</div>
+        <div class="scholar-origin">Kekhalifahan Samaniyah</div>
+        <div class="scholar-contrib"><em>Al-Qanun fi al-Tibb</em> digunakan sebagai buku teks kedokteran standar di universitas-universitas Eropa hingga abad ke-17.</div>
+      </div>
+      <div class="scholar-card">
+        <span class="scholar-icon">🌍</span>
+        <div class="scholar-era">973–1048 M · Khwarazm</div>
+        <div class="scholar-name">Al-Biruni</div>
+        <div class="scholar-origin">Kekhalifahan Ghaznavid</div>
+        <div class="scholar-contrib">Menghitung radius bumi dengan akurasi mengagumkan pada abad ke-11. Pelopor antropologi komparatif pertama dalam sejarah.</div>
+      </div>
+      <div class="scholar-card">
+        <span class="scholar-icon">🔢</span>
+        <div class="scholar-era">476–550 M · Bihar</div>
+        <div class="scholar-name">Aryabhata</div>
+        <div class="scholar-origin">Kerajaan Gupta, India</div>
+        <div class="scholar-contrib">Menghitung nilai π hingga empat desimal dan membuktikan Bumi berputar pada porosnya — semua pada abad ke-5 Masehi.</div>
+      </div>
+      <div class="scholar-card">
+        <span class="scholar-icon">📚</span>
+        <div class="scholar-era">1556–1627 M · Timbuktu</div>
+        <div class="scholar-name">Ahmad Baba</div>
+        <div class="scholar-origin">Kekaisaran Songhai, Mali</div>
+        <div class="scholar-contrib">Lebih dari 40 karya ilmiah dan perpustakaan pribadi 1.600+ buku — bukti tradisi intelektual Afrika yang kaya jauh sebelum kolonialisme.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIVIDER 6 -->
+  <div class="section-divider reveal">
+    <div class="sdiv-line"></div>
+    <div class="sdiv-gem">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="12,2 22,7 22,17 12,22 2,17 2,7" fill="none" stroke="#c9943a" stroke-width="1" class="girih-spin" opacity=".7"/>
+        <line x1="12" y1="2" x2="12" y2="22" stroke="#c9943a" stroke-width=".5" opacity=".3"/>
+        <line x1="2" y1="12" x2="22" y2="12" stroke="#c9943a" stroke-width=".5" opacity=".3"/>
+        <circle cx="12" cy="12" r="2.5" fill="#c9943a" opacity=".6"/>
+      </svg>
+    </div>
+    <div class="sdiv-line rev"></div>
+  </div>
+
+  <!-- S7 -->
+  <section class="section reveal">
+    <div class="section-num">07 — Apa yang Bisa Dilakukan?</div>
+    <h2 class="section-title">Decolonizing Knowledge: Dari Wacana ke Kurikulum</h2>
+    <div class="prose">
+      <p>Gerakan <em>decolonizing knowledge</em> bukan anti-Barat — ia anti-monopoli. Tujuannya bukan mengganti satu narasi tunggal dengan narasi tunggal lain, tapi memperluas ruang pengakuan sehingga kontribusi dari semua peradaban bisa diakui secara proporsional.</p>
+      <p>Di level akademik global, gerakan ini sudah cukup serius. University of Cape Town, SOAS London, dan banyak universitas di Amerika Latin sudah mulai merevisi kurikulum mereka secara fundamental. Tapi di level kurikulum sekolah dasar dan menengah di sebagian besar negara bekas jajahan — termasuk Indonesia — strukturnya belum banyak berubah.</p>
+    </div>
+
+    <div class="highlight-box reveal">
+      <h4>Langkah Konkret yang Bisa Dimulai</h4>
+      <ul>
+        <li><strong>Di level individu:</strong> Aktif mencari sumber-sumber sejarah sains non-Barat. Buku seperti <em>The House of Wisdom</em> (Jim Al-Khalili) atau <em>Lost Discoveries</em> (Dick Teresi) adalah titik masuk yang bagus.</li>
+        <li><strong>Di level pendidik:</strong> Saat mengajarkan optik, sebutkan Ibn al-Haytham. Saat mengajarkan aljabar, sebutkan Al-Khwarizmi. Tidak perlu perubahan kurikulum besar — cukup konteks tambahan yang jujur.</li>
+        <li><strong>Di level kebijakan:</strong> Mendorong revisi kurikulum yang memasukkan sejarah sains global secara inklusif, dan mendukung penerjemahan karya ilmiah non-Barat ke dalam bahasa Indonesia.</li>
+        <li><strong>Di level riset:</strong> Mendukung penelitian yang menggali sistem pengetahuan lokal Indonesia — dari etnobotani hingga navigasi Austronesia — sebagai pengetahuan yang sah secara akademik.</li>
+      </ul>
+    </div>
+
+    <div class="pull-quote reveal">
+      Mengakui kontribusi peradaban lain bukan berarti merendahkan pencapaian Eropa. Ini soal kejujuran sejarah — dan kejujuran itu adalah fondasi dari ilmu pengetahuan yang kita klaim sangat kita junjung.
+      <cite>— Redaksi KBDI</cite>
+    </div>
+
+    <div class="prose">
+      <p>Newton memang benar soal gravitasi. Darwin memang benar soal evolusi. Tapi kebenaran temuan mereka tidak bergantung pada narasi bahwa hanya mereka yang mampu menghasilkan pengetahuan besar. Sains yang jujur harus mengakui bahwa ia dibangun di atas pundak banyak peradaban, bukan satu.</p>
+    </div>
+  </section>
+
+  <!-- SUMBER -->
+  <div class="sources reveal">
+    <div class="sources-title">Sumber &amp; Referensi</div>
+    <div class="source-item">Al-Khalili, J. (2011). <em>The House of Wisdom.</em> Penguin Press.</div>
+    <div class="source-item">Quijano, A. (2000). Coloniality of Power, Eurocentrism, and Latin America. <em>Nepantla,</em> 1(3), 533–580.</div>
+    <div class="source-item">Mignolo, W. (2000). <em>Local Histories/Global Designs.</em> Princeton University Press.</div>
+    <div class="source-item">Teresi, D. (2002). <em>Lost Discoveries: The Ancient Roots of Modern Science.</em> Simon &amp; Schuster.</div>
+    <div class="source-item">Rashed, R. (1994). <em>The Development of Arabic Mathematics.</em> Springer. <a href="https://doi.org/10.1007/978-94-017-3274-1" target="_blank">doi.org</a></div>
+    <div class="source-item">Sabra, A.I. (1989). <em>The Optics of Ibn al-Haytham.</em> The Warburg Institute, University of London.</div>
+    <div class="source-item">Stanford Encyclopedia of Philosophy. <em>Ibn al-Haytham.</em> <a href="https://plato.stanford.edu/entries/ibn-al-haytham/" target="_blank">plato.stanford.edu</a></div>
+    <div class="source-item">Encyclopaedia Iranica. <em>Al-Biruni.</em> <a href="https://www.iranicaonline.org/articles/biruni-abu-rayhan-i-life" target="_blank">iranicaonline.org</a></div>
+    <div class="source-item">UNESCO (2010). <em>History of Humanity: Scientific and Cultural Development,</em> Vol. IV. <a href="https://unesdoc.unesco.org" target="_blank">unesdoc.unesco.org</a></div>
+    <div class="source-item">UCL. (2020). Decolonising the Curriculum. <a href="https://www.ucl.ac.uk/teaching-learning/publications/2020/jun/decolonising-curriculum" target="_blank">ucl.ac.uk</a></div>
+  </div>
+
+</div>
+</main>
+
+<!-- ══════════ SCRIPT ══════════ -->
+<script>
+  /* Reveal */
+  const revObs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revObs.unobserve(e.target); } });
+  }, { threshold: 0.07, rootMargin: '0px 0px -36px 0px' });
+  document.querySelectorAll('.reveal, .scholar-card, .timeline-item').forEach(el => revObs.observe(el));
+
+  document.querySelectorAll('.scholar-card').forEach((c,i) => c.style.transitionDelay = (i*0.08)+'s');
+  document.querySelectorAll('.timeline-item').forEach((t,i) => t.style.transitionDelay = (i*0.1)+'s');
+
+  /* SVG B — Timeline vertikal */
+  (function(){
+    const wrap = document.getElementById('timelineWrap');
+    if (!wrap) return;
+    let played = false;
+    function run() {
+      if (played) return; played = true;
+      const lG = document.getElementById('lineGold');
+      const lL = document.getElementById('lineLapis');
+      const dG = document.getElementById('dotsGold');
+      const dL = document.getElementById('dotsLapis');
+      // Garis emas tumbuh ke bawah: y1=60 → y2=770
+      const s1 = performance.now();
+      (function growG(now) {
+        const t = Math.min((now-s1)/2200,1), e = 1-Math.pow(1-t,3);
+        lG.setAttribute('y2', 60 + e*710);
+        if (t<1) requestAnimationFrame(growG);
+        else { dG.style.transition='opacity 0.7s'; dG.style.opacity=1; }
+      })(s1);
+      setTimeout(()=>{
+        const s2 = performance.now();
+        (function growL(now) {
+          const t = Math.min((now-s2)/1400,1), e = 1-Math.pow(1-t,3);
+          lL.setAttribute('y2', 440 + e*330);
+          if (t<1) requestAnimationFrame(growL);
+          else { dL.style.transition='opacity 0.7s'; dL.style.opacity=1; }
+        })(s2);
+      }, 800);
+    }
+    new IntersectionObserver(ens=>ens.forEach(e=>{if(e.isIntersecting)run();}),{threshold:0.2}).observe(wrap);
+  })();
+
+  /* SVG D — Peta transmisi pengetahuan */
+  (function(){
+    const wrap = document.getElementById('mapWrap');
+    if (!wrap) return;
+    let played = false;
+
+    function animPath(el, delay) {
+      setTimeout(()=>{
+        el.style.opacity = 1;
+        const len = el.getTotalLength ? el.getTotalLength() : 150;
+        el.style.strokeDasharray = len;
+        el.style.strokeDashoffset = len;
+        el.style.transition = 'stroke-dashoffset 1.2s ease';
+        setTimeout(()=>{ el.style.strokeDashoffset = 0; }, 50);
+      }, delay);
+    }
+
+    function run() {
+      if (played) return; played = true;
+      // Titik kota muncul dulu
+      const dots = document.getElementById('cityDots');
+      const legend = document.getElementById('mapLegend');
+      dots.style.transition = 'opacity 0.8s';
+      dots.style.opacity = 1;
+      // Garis transmisi muncul bertahap
+      const paths = document.querySelectorAll('.tpath');
+      paths.forEach((p,i)=>animPath(p, 800+i*400));
+      // Legenda muncul terakhir
+      setTimeout(()=>{
+        legend.style.transition='opacity 0.8s';
+        legend.style.opacity=1;
+      }, 800 + paths.length*400 + 300);
+    }
+    new IntersectionObserver(ens=>ens.forEach(e=>{if(e.isIntersecting)run();}),{threshold:0.25}).observe(wrap);
+  })();
+</script>
+
+<script>
+  const savedTheme = localStorage.getItem('kbdi-theme');
+  if (savedTheme === 'light') document.documentElement.classList.add('light');
+
+  fetch('https://edukbdi.github.io/header.html')
+    .then(r => r.text())
+    .then(html => {
+      document.body.insertAdjacentHTML('afterbegin', html);
+      const header = document.getElementById('kbdi-header');
+      if (savedTheme === 'light') header.classList.add('kbdi-light');
+      document.getElementById('kbdiThemeToggle').addEventListener('click', function() {
+        const isLight = document.documentElement.classList.toggle('light');
+        header.classList.toggle('kbdi-light', isLight);
+        localStorage.setItem('kbdi-theme', isLight ? 'light' : 'dark');
+        const footer = document.getElementById('kbdi-footer');
+        if (footer) footer.classList.toggle('kbdi-light', isLight);
+      });
+    });
+
+  fetch('https://edukbdi.github.io/footer.html')
+    .then(r => r.text())
+    .then(html => {
+      document.body.insertAdjacentHTML('beforeend', html);
+      const footer = document.getElementById('kbdi-footer');
+      if (footer && savedTheme === 'light') footer.classList.add('kbdi-light');
+    });
+</script>
+
+</body>
+</html>
